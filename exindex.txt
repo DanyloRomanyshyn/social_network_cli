@@ -1,0 +1,280 @@
+const { ObjectId } = require('mongodb'); // Додай цей імпорт на початку файлу
+const { connectToDatabase } = require('./database');
+const inquirer = require('inquirer').default; // Враховуємо, що inquirer вже використовується
+
+
+// Функція для реєстрації користувача
+async function registerUser(db) {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  const answers = await inquirer.prompt([
+    { name: 'email', message: 'Enter your email:' },
+    { name: 'password', message: 'Enter your password:' },
+    { name: 'firstName', message: 'Enter your first name:' },
+    { name: 'lastName', message: 'Enter your last name:' },
+    { name: 'interests', message: 'Enter your interests (comma-separated):' },
+  ]);
+
+  const interestsArray = answers.interests.split(',').map(interest => interest.trim());
+
+  const newUser = {
+    email: answers.email,
+    password: answers.password,
+    firstName: answers.firstName,
+    lastName: answers.lastName,
+    interests: interestsArray,
+  };
+
+  await usersCollection.insertOne(newUser);
+  console.log('User registered successfully!');
+
+  await db.client.close();
+}
+
+async function loginUser(db) {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  const answers = await inquirer.prompt([
+    { name: 'email', message: 'Enter your email:' },
+    { name: 'password', message: 'Enter your password:' }
+  ]);
+
+  const user = await usersCollection.findOne({ email: answers.email, password: answers.password });
+
+  if (user) {
+    console.log('Login successful! Welcome, ' + user.firstName + '!');
+    
+    let isLoggedIn = true;
+    while (isLoggedIn) {
+      const action = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'nextAction',
+          message: 'What would you like to do?',
+          choices: ['View News Feed', 'View My Posts', 'Create Post', 'Add Friend', 'Remove Friend', 'View All Users', 'View Friends List', 'Logout']
+        }
+      ]);
+
+      if (action.nextAction === 'View News Feed') {
+        await viewNewsFeed(user);
+      } else if (action.nextAction === 'View My Posts') {
+        await viewMyPosts(user); // Новий пункт для перегляду власних постів
+      } else if (action.nextAction === 'Create Post') {
+        await createPost(user);
+      } else if (action.nextAction === 'Add Friend') {
+        await addFriend(user);
+      } else if (action.nextAction === 'Remove Friend') {
+        await removeFriend(user);
+      } else if (action.nextAction === 'View All Users') {
+        await viewAllUsers();
+      } else if (action.nextAction === 'View Friends List') {
+        await viewFriendsList(user);
+      } else if (action.nextAction === 'Logout') {
+        console.log('You have been logged out.');
+        isLoggedIn = false;
+      }
+    }
+  } else {
+    console.log('Invalid email or password.');
+  }
+
+  await db.client.close();
+}
+
+
+
+
+
+
+async function viewNewsFeed(db, user) {
+    const friendIds = user.friends;
+    const posts = await db.collection('posts').find({ userId: { $in: friendIds } }).toArray();
+    if (posts.length > 0) {
+        console.log("News Feed:");
+        posts.forEach((post, index) => {
+            console.log(`Post ${index + 1} by User ${post.userId}:`);
+            console.log(`Content: ${post.content}`);
+            console.log(`Date: ${post.createdAt}`);
+            console.log(`Reactions: ${JSON.stringify(post.reactions)}`);
+            console.log("---");
+        });
+    } else {
+        console.log("Your friends haven't posted anything yet.");
+    }
+}
+
+
+
+
+async function viewMyPosts(user) {
+  const db = await connectToDatabase();
+  const postsCollection = db.collection('posts');
+
+  // Fetch only the user's own posts
+  const posts = await postsCollection.find({ userId: user._id }).sort({ createdAt: -1 }).toArray();
+
+  if (posts.length === 0) {
+    console.log("You haven't posted anything yet.");
+  } else {
+    console.log("\nYour Posts:");
+    posts.forEach((post, index) => {
+      console.log(`\nPost ${index + 1}:`);
+      console.log(`Content: ${post.content}`);
+      console.log(`Date: ${post.createdAt}`);
+      console.log(`Reactions: ${JSON.stringify(post.reactions || {})}`);
+      console.log('---');
+    });
+  }
+
+  await db.client.close();
+}
+
+
+
+
+
+async function addFriend(user) {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  // Запит на email друга, якого потрібно додати
+  const answer = await inquirer.prompt([
+    { name: 'friendEmail', message: 'Enter the email of the friend you want to add:' }
+  ]);
+
+  // Перевіряємо, чи існує користувач з таким email
+  const friend = await usersCollection.findOne({ email: answer.friendEmail });
+
+  if (!friend) {
+    console.log('User with this email not found.');
+    await db.client.close();
+    return;
+  }
+
+  // Додаємо друга до списку друзів, якщо його ще немає у списку
+  if (!user.friends) user.friends = [];
+  if (user.friends.includes(friend._id)) {
+    console.log('This user is already your friend.');
+  } else {
+    await usersCollection.updateOne(
+      { _id: user._id },
+      { $push: { friends: friend._id } }
+    );
+    console.log(`${friend.email} has been added to your friends list.`);
+  }
+
+  await db.client.close();
+}
+
+async function removeFriend(user) {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  // Запит на email друга, якого потрібно видалити
+  const answer = await inquirer.prompt([
+    { name: 'friendEmail', message: 'Enter the email of the friend you want to remove:' }
+  ]);
+
+  // Знаходимо друга за email
+  const friend = await usersCollection.findOne({ email: answer.friendEmail });
+
+  if (!friend) {
+    console.log('User with this email not found.');
+    await db.client.close();
+    return;
+  }
+
+  // Перевіряємо, чи є користувач у списку друзів
+  const friendId = new ObjectId(friend._id); // Конвертація у формат ObjectId для сумісності
+  if (user.friends && user.friends.some(id => id.equals(friendId))) {
+    await usersCollection.updateOne(
+      { _id: user._id },
+      { $pull: { friends: friendId } }
+    );
+    console.log(`${friend.email} has been removed from your friends list.`);
+  } else {
+    console.log('This user is not in your friends list.');
+  }
+
+  await db.client.close();
+}
+
+async function viewAllUsers() {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  const users = await usersCollection.find({}, { projection: { password: 0 } }).toArray(); // виключаємо пароль із результатів
+
+  console.log("\nRegistered Users:");
+  users.forEach((user, index) => {
+    console.log(`${index + 1}. ${user.firstName} ${user.lastName} (${user.email})`);
+  });
+
+  await db.client.close();
+}
+
+async function createPost(user) {
+  const db = await connectToDatabase();
+  const postsCollection = db.collection('posts');
+
+  const answer = await inquirer.prompt([
+    { name: 'content', message: 'Enter the content of your post:' }
+  ]);
+
+  const newPost = {
+    userId: user._id,
+    content: answer.content,
+    createdAt: new Date(),
+    reactions: {} // поле для реакцій
+  };
+
+  await postsCollection.insertOne(newPost);
+  console.log("Your post has been created successfully!");
+
+  await db.client.close();
+}
+
+async function viewFriendsList(user) {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  if (user.friends.length === 0) {
+    console.log("You don't have any friends added yet.");
+    return;
+  }
+
+  // Знаходимо всіх користувачів, чиї ID збігаються з ID у списку друзів
+  const friends = await usersCollection.find({ _id: { $in: user.friends.map(friendId => new ObjectId(friendId)) } }).toArray();
+
+  console.log("\nYour Friends:");
+  friends.forEach((friend, index) => {
+    console.log(`${index + 1}. ${friend.firstName} ${friend.lastName} - ${friend.email}`);
+  });
+
+  await db.client.close();
+}
+
+
+async function mainMenu() {
+    const db = await connectToDatabase();  // отримуємо підключення до бази
+    const choice = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'action',
+            message: 'Choose an action:',
+            choices: ['Register', 'Login']
+        }
+    ]);
+
+    if (choice.action === 'Register') {
+        await registerUser(db);  // передаємо db у функцію
+    } else if (choice.action === 'Login') {
+        await loginUser(db);  // передаємо db у функцію
+    }
+}
+
+// Виклик головного меню
+mainMenu().catch(console.error);
+
