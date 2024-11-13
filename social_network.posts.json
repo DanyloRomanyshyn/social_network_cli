@@ -1,0 +1,281 @@
+[{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651a"
+  },
+  "userId": "672fc1887585f0eab8d86503",
+  "content": "Дізнався багато нового про MongoDB сьогодні!",
+  "createdAt": "2024-11-09T08:00:00Z",
+  "reactions": {
+    "like": 9,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651b"
+  },
+  "userId": "672fc1887585f0eab8d86503",
+  "content": "Прекрасний день для читання.",
+  "createdAt": "2024-11-08T10:30:00Z",
+  "reactions": {
+    "like": 3
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651c"
+  },
+  "userId": "672fc1887585f0eab8d86504",
+  "content": "Яка гра сподобалася цього року найбільше?",
+  "createdAt": "2024-11-07T18:45:00Z",
+  "reactions": {
+    "like": 4,
+    "funny": 2
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651d"
+  },
+  "userId": "672fc1887585f0eab8d86504",
+  "content": "Завтра йду на фотосесію!",
+  "createdAt": "2024-11-06T14:00:00Z",
+  "reactions": {
+    "like": 7
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651e"
+  },
+  "userId": "672fc1887585f0eab8d86505",
+  "content": "Спробував новий рецепт сьогодні.",
+  "createdAt": "2024-11-05T19:30:00Z",
+  "reactions": {
+    "like": 6,
+    "yum": 2
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8651f"
+  },
+  "userId": "672fc1887585f0eab8d86505",
+  "content": "Подорож почалася з прекрасного ранку.",
+  "createdAt": "2024-11-05T08:00:00Z",
+  "reactions": {
+    "like": 10,
+    "love": 3
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86520"
+  },
+  "userId": "672fc1887585f0eab8d86506",
+  "content": "Цікаві наукові відкриття!",
+  "createdAt": "2024-11-04T12:15:00Z",
+  "reactions": {
+    "like": 9
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86521"
+  },
+  "userId": "672fc1887585f0eab8d86506",
+  "content": "Спробувала новий стиль йоги.",
+  "createdAt": "2024-11-04T09:45:00Z",
+  "reactions": {
+    "like": 4,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86522"
+  },
+  "userId": "672fc1887585f0eab8d86507",
+  "content": "Історичні події можуть багато чому навчити.",
+  "createdAt": "2024-11-03T15:00:00Z",
+  "reactions": {
+    "like": 8
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86523"
+  },
+  "userId": "672fc1887585f0eab8d86507",
+  "content": "Навчання іноземних мов – це захоплююче!",
+  "createdAt": "2024-11-02T11:00:00Z",
+  "reactions": {
+    "like": 7,
+    "love": 2
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86524"
+  },
+  "userId": "672fc1887585f0eab8d86508",
+  "content": "Побачив чудовий фільм учора.",
+  "createdAt": "2024-11-01T18:20:00Z",
+  "reactions": {
+    "like": 5,
+    "wow": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86525"
+  },
+  "userId": "672fc1887585f0eab8d86508",
+  "content": "Читання класичної літератури завжди на часі.",
+  "createdAt": "2024-11-01T14:50:00Z",
+  "reactions": {
+    "like": 6
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86526"
+  },
+  "userId": "672fc1887585f0eab8d86509",
+  "content": "Купив нову гру, готовий до пригод!",
+  "createdAt": "2024-10-30T19:00:00Z",
+  "reactions": {
+    "like": 4
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86527"
+  },
+  "userId": "672fc1887585f0eab8d86509",
+  "content": "Захоплююсь мистецтвом фотографії.",
+  "createdAt": "2024-10-29T17:40:00Z",
+  "reactions": {
+    "like": 9
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86528"
+  },
+  "userId": "672fc1887585f0eab8d8650a",
+  "content": "Готую нову книгу рецептів!",
+  "createdAt": "2024-10-28T13:10:00Z",
+  "reactions": {
+    "like": 7,
+    "yum": 3
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d86529"
+  },
+  "userId": "672fc1887585f0eab8d8650a",
+  "content": "Ділюсь своїми подорожніми записками.",
+  "createdAt": "2024-10-27T09:30:00Z",
+  "reactions": {
+    "like": 8
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8652a"
+  },
+  "userId": "672fc1887585f0eab8d8650b",
+  "content": "Відвідую конференцію про нові технології.",
+  "createdAt": "2024-10-26T10:45:00Z",
+  "reactions": {
+    "like": 10
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8652b"
+  },
+  "userId": "672fc1887585f0eab8d8650b",
+  "content": "Це був насичений тиждень для йоги.",
+  "createdAt": "2024-10-25T16:00:00Z",
+  "reactions": {
+    "like": 6
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8652c"
+  },
+  "userId": "672fc1887585f0eab8d8650c",
+  "content": "Історія – найкращий учитель.",
+  "createdAt": "2024-10-24T14:30:00Z",
+  "reactions": {
+    "like": 8
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc5757585f0eab8d8652d"
+  },
+  "userId": "672fc1887585f0eab8d8650c",
+  "content": "Планую подорож до Іспанії.",
+  "createdAt": "2024-10-23T18:50:00Z",
+  "reactions": {
+    "like": 10,
+    "love": 4
+  }
+},
+{
+  "_id": {
+    "$oid": "673253e823cc9ddd56c89b67"
+  },
+  "userId": {
+    "$oid": "672fc1887585f0eab8d86503"
+  },
+  "content": "Сьогодні я зробив проект з університету",
+  "createdAt": {
+    "$date": "2024-11-11T18:58:48.107Z"
+  },
+  "reactions": {}
+},
+{
+  "_id": {
+    "$oid": "6733f3b127013e7a869559b3"
+  },
+  "userId": {
+    "$oid": "6733e8189a1e62e5a901cc92"
+  },
+  "content": "Today is a great day!",
+  "createdAt": {
+    "$date": "2024-11-13T00:32:49.243Z"
+  },
+  "reactions": {}
+},
+{
+  "_id": {
+    "$oid": "67340407ae149566429230bc"
+  },
+  "userId": {
+    "$oid": "6733e8189a1e62e5a901cc92"
+  },
+  "content": "I love this world",
+  "createdAt": {
+    "$date": "2024-11-13T01:42:31.019Z"
+  },
+  "reactions": {}
+},
+{
+  "_id": {
+    "$oid": "673406fff196baee2583d885"
+  },
+  "userId": {
+    "$oid": "6733e8189a1e62e5a901cc92"
+  },
+  "content": "alice.smith@example.com",
+  "createdAt": {
+    "$date": "2024-11-13T01:55:11.643Z"
+  },
+  "reactions": {}
+}]

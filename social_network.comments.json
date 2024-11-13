@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d8653d"
+  },
+  "postId": "672fc5757585f0eab8d8651a",
+  "userId": "672fc1887585f0eab8d86503",
+  "content": "Звучить цікаво, хочу більше дізнатись!",
+  "createdAt": "2024-11-09T08:30:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 6
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d8653e"
+  },
+  "postId": "672fc5757585f0eab8d8651a",
+  "userId": "672fc1887585f0eab8d86504",
+  "content": "Чудова ідея! Поділись подробицями.",
+  "createdAt": "2024-11-09T08:45:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d8653f"
+  },
+  "postId": "672fc5757585f0eab8d8651b",
+  "userId": "672fc1887585f0eab8d86505",
+  "content": "Це справді класно, дякую за рекомендацію!",
+  "createdAt": "2024-11-08T11:00:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86540"
+  },
+  "postId": "672fc5757585f0eab8d8651c",
+  "userId": "672fc1887585f0eab8d86506",
+  "content": "Теж люблю обговорювати новинки!",
+  "createdAt": "2024-11-07T19:00:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86541"
+  },
+  "postId": "672fc5757585f0eab8d8651d",
+  "userId": "672fc1887585f0eab8d86507",
+  "content": "Вражений! Дякую за натхнення.",
+  "createdAt": "2024-11-06T15:00:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86542"
+  },
+  "postId": "672fc5757585f0eab8d8651e",
+  "userId": "672fc1887585f0eab8d86508",
+  "content": "Пробував теж, це щось неймовірне!",
+  "createdAt": "2024-11-05T20:00:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86543"
+  },
+  "postId": "672fc5757585f0eab8d8651f",
+  "userId": "672fc1887585f0eab8d86505",
+  "content": "Цікаво дізнатись, як це змінить плани.",
+  "createdAt": "2024-11-05T08:30:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86544"
+  },
+  "postId": "672fc5757585f0eab8d8651f",
+  "userId": "672fc1887585f0eab8d86507",
+  "content": "Справді, знання мають значення.",
+  "createdAt": "2024-11-04T12:45:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86545"
+  },
+  "postId": "672fc5757585f0eab8d8651f",
+  "userId": "672fc1887585f0eab8d86509",
+  "content": "Підтримую! Варто знати більше.",
+  "createdAt": "2024-11-04T10:00:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "672fc7937585f0eab8d86546"
+  },
+  "postId": "672fc5757585f0eab8d86520",
+  "userId": "672fc1887585f0eab8d8650a",
+  "content": "Те, що треба для збагачення знань.",
+  "createdAt": "2024-11-03T15:30:00Z",
+  "reactions": {
+    "like": 1,
+    "love": 1
+  }
+}]

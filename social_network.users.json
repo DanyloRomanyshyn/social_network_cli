@@ -1,0 +1,222 @@
+[{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86503"
+  },
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "interests": [
+    "music",
+    "sports",
+    "travel"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    },
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    },
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    },
+    {
+      "$oid": "672fc1887585f0eab8d86507"
+    },
+    {
+      "$oid": "672fc1887585f0eab8d86507"
+    },
+    {
+      "$oid": "6733e8189a1e62e5a901cc92"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86504"
+  },
+  "email": "alice.smith@example.com",
+  "password": "password456",
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "interests": [
+    "reading",
+    "hiking",
+    "coding"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86505"
+  },
+  "email": "bob.johnson@example.com",
+  "password": "password789",
+  "firstName": "Bob",
+  "lastName": "Johnson",
+  "interests": [
+    "movies",
+    "gaming",
+    "music"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86506"
+  },
+  "email": "carol.wilson@example.com",
+  "password": "carolpass",
+  "firstName": "Carol",
+  "lastName": "Wilson",
+  "interests": [
+    "photography",
+    "art",
+    "fashion"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86507"
+  },
+  "email": "david.brown@example.com",
+  "password": "davidpass",
+  "firstName": "David",
+  "lastName": "Brown",
+  "interests": [
+    "fitness",
+    "cooking",
+    "books"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86508"
+  },
+  "email": "emma.davis@example.com",
+  "password": "emmapass",
+  "firstName": "Emma",
+  "lastName": "Davis",
+  "interests": [
+    "writing",
+    "travel",
+    "blogging"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d86509"
+  },
+  "email": "frank.miller@example.com",
+  "password": "frankpass",
+  "firstName": "Frank",
+  "lastName": "Miller",
+  "interests": [
+    "technology",
+    "science",
+    "space"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d8650a"
+  },
+  "email": "grace.martin@example.com",
+  "password": "gracepass",
+  "firstName": "Grace",
+  "lastName": "Martin",
+  "interests": [
+    "gardening",
+    "painting",
+    "yoga"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d8650b"
+  },
+  "email": "henry.moore@example.com",
+  "password": "henrypass",
+  "firstName": "Henry",
+  "lastName": "Moore",
+  "interests": [
+    "history",
+    "politics",
+    "economics"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "672fc1887585f0eab8d8650c"
+  },
+  "email": "isabel.taylor@example.com",
+  "password": "isabelpass",
+  "firstName": "Isabel",
+  "lastName": "Taylor",
+  "interests": [
+    "education",
+    "languages",
+    "culture"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6733e8189a1e62e5a901cc92"
+  },
+  "email": "test",
+  "password": "test",
+  "firstName": "Test",
+  "lastName": "Test",
+  "interests": [
+    "travel"
+  ],
+  "friends": [
+    {
+      "$oid": "672fc1887585f0eab8d86503"
+    }
+  ]
+}]
