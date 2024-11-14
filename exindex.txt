@@ -1,4 +1,4 @@
-const { ObjectId } = require('mongodb'); // Додай цей імпорт на початку файлу
+const { ObjectId } = require('mongodb'); 
 const { connectToDatabase } = require('./database');
 const inquirer = require('inquirer').default; // Враховуємо, що inquirer вже використовується
 
